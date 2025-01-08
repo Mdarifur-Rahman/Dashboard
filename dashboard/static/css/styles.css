@@ -1,0 +1,181 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00274C;
+    /* Blue background */
+    color: white;
+    /* White text for contrast */
+    text-align: center;
+    display: block;
+    /* Allow natural vertical stacking */
+    height: 100%;
+}
+
+/* Header */
+h1 {
+    background-color: #FFCB05;
+    /* Maize */
+    color: #00274C;
+    /* Blue */
+    padding: 15px;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Section Styling */
+#metrics,
+#gps,
+#chat {
+    background-color: white;
+    /* White card background */
+    color: #00274C;
+    /* Blue text */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+}
+
+/* Buttons */
+button {
+    background-color: #FFCB05;
+    /* Maize */
+    color: #00274C;
+    /* Blue text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e6b305;
+    /* Slightly darker maize */
+}
+
+/* Input Box */
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid #FFCB05;
+    /* Maize border */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #00274C;
+    /* Blue text */
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: #888;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    background-color: #FFCB05;
+    color: #00274C;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Form Container */
+form {
+    background-color: white;
+    /* White background for forms */
+    color: #00274C;
+    /* Blue text */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    /* Center vertically with spacing */
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #FFCB05;
+    /* Maize */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+p {
+    margin: 0;
+    padding: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+/* Header Logout Button */
+nav a {
+    background-color: white;
+    /* White background for contrast */
+    color: #00274C;
+    /* Blue text */
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #e6b305;
+    /* Slightly darker maize */
+    color: #00274C;
+}
+
+#map {
+    height: 400px;
+    /* Map height */
+    width: 100%;
+    /* Full width */
+    margin-top: 20px;
+    border: 2px solid #FFCB05;
+    /* Optional border */
+    border-radius: 8px;
+}
+
+p {
+    font-size: 1em;
+    color: #00274C;
+    /* Blue text */
+    margin: 5px 0;
+}
+canvas {
+    width: 100%;
+    /* Scale canvas width to container */
+    max-width: 600px;
+    /* Optional maximum width */
+    height: 300px;
+    /* Fixed height */
+    margin: 20px auto;
+    /* Center align */
+    display: block;
+    /* Ensure block layout */
+}
+
+#speedChart,
+#energyChart,
+#temperatureChart {
+  /* Set a reasonable size */
+  max-width: 600px; 
+  max-height: 400px;
+}

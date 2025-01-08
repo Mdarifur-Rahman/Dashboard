@@ -1,0 +1,28 @@
+# Python virtual environment
+venv/
+env/
+
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Django specific
+db.sqlite3           # SQLite database (if used in development)
+
+# Environment variables
+.env                 # Secrets and environment-specific configurations
+
+# Logs
+*.log
+
+# IDE/Editor files
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store            # macOS
+Thumbs.db            # Windows
+
+# Coverage and testing
+.coverage

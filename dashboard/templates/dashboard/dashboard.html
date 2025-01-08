@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Crew Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header style="background-color: #FFCB05; color: #00274C; padding: 10px;">
+        <div style="display: flex; align-items: center;">
+            <img src="{% static 'icons/blockM.png' %}" alt="Logo" style="height: 80px; margin-right: 10px;">
+            <h1>Race Crew Dashboard</h1>
+        </div>
+        <nav>
+            <a href="{% url 'logout' %}"
+                style="background-color: white; padding: 8px 12px; border-radius: 5px;">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Metrics Section -->
+    <div id="metrics">
+        <h2>Vehicle Metrics</h2>
+        <canvas id="speedChart"></canvas>
+        <canvas id="energyChart"></canvas>
+        <canvas id="temperatureChart"></canvas>
+        <p><i class="fas fa-tachometer-alt"></i> Speed: <span id="speed">--</span> km/h</p>
+        <p><i class="fas fa-battery-full"></i> Energy: <span id="energy">--</span>%</p>
+        <p><i class="fas fa-thermometer-half"></i> Temperature: <span id="temperature">--</span>°C</p>
+    </div>
+
+    <!-- GPS Section -->
+    <div id="gps">
+        <h2>Vehicle Location</h2>
+        <p>Latitude: <span id="latitude">--</span></p>
+        <p>Longitude: <span id="longitude">--</span></p>
+        <p>Address: <span id="address">--</span></p>
+    </div>
+
+    <div id="map" style="height: 400px; width: 100%;"></div>
+    <button onclick="toggleTracking()">Toggle Tracking</button>
+
+    <!-- Chat Section -->
+    <div id="chat">
+        <h2>Live Chat</h2>
+        <ul id="messages"></ul>
+        <input type="text" id="chatInput" placeholder="Type your message here...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; 2024 Solar Car Race Team - University of Michigan</footer>
+
+    <!-- Scripts -->
+     
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzk49cezFwbfJIJOSnRGr8yOnB6Tf9QpQ&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+    <script src="{% static 'js/dashboard.js' %}" defer></script>
+
+</body>
+
+</html>

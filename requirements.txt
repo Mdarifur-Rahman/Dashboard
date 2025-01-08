@@ -1,0 +1,6 @@
+Django
+djangorestframework
+channels
+psycopg2      # For PostgreSQL (use `sqlite3` for development)
+requests
+Pillow        # Image processing
