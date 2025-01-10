@@ -13,17 +13,25 @@ def dashboard_home(request):
 
 
 def get_metrics(request):
-    api_key = "353fd107fc825a7527724fbd7a65b156"  # Replace with your OpenWeatherMap API key
+    api_key = "353fd107fc825a7527724fbd7a65b156"
     base_url = "http://api.openweathermap.org/data/2.5/weather"
 
-    # Default location 
-    lat = 0
-    lon = 0
+    # Attempt to read lat/lon from query params; fallback to 0 if not provided
+    lat = request.GET.get('lat', 0)
+    lon = request.GET.get('lon', 0)
 
-    # Initialize temperature
+    # Convert them to floats
+    try:
+        lat = float(lat)
+        lon = float(lon)
+    except ValueError:
+        # if conversion fails, use defaults or handle error
+        lat = 0
+        lon = 0
+
     temperature = None
 
-    # Fetch live temperature
+    # Fetch live temperature using lat/lon from the request
     try:
         response = requests.get(base_url, params={
             'lat': lat,
@@ -33,25 +41,25 @@ def get_metrics(request):
         })
         if response.status_code == 200:
             weather_data = response.json()
-            temperature = weather_data['main']['temp']  # Get temperature from API
+            temperature = weather_data['main']['temp']
         else:
-            print("Weather API Error:", response.json())  # Log API response for debugging
+            print("Weather API Error:", response.json())
     except Exception as e:
         print("Error connecting to Weather API:", e)
 
-    # Use API temperature or fallback to the last known API value (if saved)
+    # Fallback if we couldn’t retrieve a temperature
     if temperature is None:
-        # You can implement caching here or keep a "last known value"
         print("Using fallback temperature")
-        temperature = 30  # Fallback value in case API fails completely
+        temperature = 30
 
-    # Simulate other dynamic data
+    # Your simulated data
     data = {
-        'speed': 80,          # Example: Speed in km/h
-        'energy': 65,         # Example: Battery energy percentage
-        'temperature': temperature  # Use live or fallback temperature
+        'speed': 80,
+        'energy': 65,
+        'temperature': temperature
     }
     return JsonResponse(data)
+
 
 
 def get_gps(request):
