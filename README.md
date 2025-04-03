@@ -1,4 +1,4 @@
-# ☀️ Solar Car Race Crew Dashboard
+# ☀️ Solar Car Race Crew Dashboard [Unfinished]
 
 This project is an interactive dashboard built to support the **University of Michigan Solar Car Team** during the **2024 American Solar Challenge (ASC)**. The dashboard consolidates real-time race data into an intuitive web interface for efficient decision-making by the race crew.
 
